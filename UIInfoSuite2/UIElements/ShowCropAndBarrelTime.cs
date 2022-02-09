@@ -100,6 +100,12 @@ namespace UIInfoSuite.UIElements
             int overrideX = -1;
             int overrideY = -1;
 
+            //skip if cursor not visible
+            if (!Game1.wasMouseVisibleThisFrame)
+            {
+                return;
+            }
+
             // draw hover tooltip
             if (currentTileBuilding != null && currentTileBuilding is Mill millBuilding && millBuilding.input.Value != null && !millBuilding.input.Value.isEmpty())
             {
